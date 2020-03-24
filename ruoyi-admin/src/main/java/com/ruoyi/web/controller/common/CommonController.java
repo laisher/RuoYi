@@ -49,7 +49,7 @@ public class CommonController
             }
             String realFileName = System.currentTimeMillis() + fileName.substring(fileName.indexOf("_") + 1);
             String filePath = Global.getDownloadPath() + fileName;
-            String s = new String("aa");
+
             response.setCharacterEncoding("utf-8");
             response.setContentType("multipart/form-data");
             response.setHeader("Content-Disposition",
@@ -78,6 +78,7 @@ public class CommonController
             // 上传文件路径
             String filePath = Global.getUploadPath();
             // 上传并返回新文件名称
+
             String fileName = FileUploadUtils.upload(filePath, file);
             String url = serverConfig.getUrl() + fileName;
             AjaxResult ajax = AjaxResult.success();
